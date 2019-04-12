@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/loading_dialog_bg_shape"
+    android:gravity="center"
+    android:layout_width="140dp"
+    android:layout_height="120dp">
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/dialog_loading_view"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        style="@style/SpinKitView.Large.ThreeBounce"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/white"/>
+
+    <TextView
+        android:id="@+id/dialog_loading_tv"
+        android:layout_below="@id/dialog_loading_view"
+        android:layout_marginTop="20dp"
+        android:text="LOADING..."
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

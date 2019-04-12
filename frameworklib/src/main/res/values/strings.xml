@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FrameworkLib</string>
+    <string name="load_failed">加载失败</string>
+
+    <string name="reload">重新加载</string>
+    <string name="title_back">返回</string>
+</resources>

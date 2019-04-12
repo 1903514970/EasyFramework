@@ -1,0 +1,14 @@
+<resources>
+
+
+    <style name="loading_dialog" parent="Base.Theme.AppCompat.Light.Dialog">
+        <!--是否浮在窗口之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--半透明-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--是否显示title-->
+        <item name="android:windowNoTitle">true</item>
+        <!--dialog之外没有焦点的区域是否罩上黑色半透明-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

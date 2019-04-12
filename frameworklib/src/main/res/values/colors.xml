@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="tab_red_text_color">#fe4646</color>
+    <color name="main_tab_selected_color">#36D4E7</color>
+    <color name="main_tab_normal_color">#8C8C8C</color>
+    <color name="app_title_bar_color">#00b0fc</color>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/app_title_bar_color"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_bar_height">
+
+    <TextView
+        android:id="@+id/simple_title_bar_back_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:minWidth="50dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:drawableLeft="@drawable/ic_common_back"/>
+
+    <TextView
+        android:id="@+id/simple_title_bar_right_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:visibility="gone"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/simple_title_bar_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"/>
+</merge>
