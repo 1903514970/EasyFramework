@@ -5,5 +5,5 @@ package com.dj.frameworklib.utils.shared_preference;
  */
 
 public enum  SPReturnTypeEnum {
-    Boolean,Int,String,Float,Long,StringSet;
+    Boolean,Int,String,Float,Long,StringSet,Object,List;
 }

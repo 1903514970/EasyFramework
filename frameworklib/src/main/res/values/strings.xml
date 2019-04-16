@@ -4,4 +4,12 @@
 
     <string name="reload">重新加载</string>
     <string name="title_back">返回</string>
+
+    <string name="REFRESHING">正在刷新...</string>
+    <string name="RELEASE_TO_REFRESH">松开刷新</string>
+    <string name="SWIPE_TO_REFRESH">下拉刷新</string>
+    <string name="COMPLETE">刷新完成</string>
+    <string name="RELEASE_TO_LOAD_MORE">松开加载更多</string>
+    <string name="SWIPE_TO_LOAD_MORE">上拉加载更多</string>
+    <string name="LOADING_MORE">正在加载...</string>
 </resources>

@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.alibaba.fastjson.JSON;
+
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -101,6 +104,32 @@ class SharedPreferenceImpl<T extends ISharedPreferenceKeysEntity> implements ISh
     }
 
     @Override
+    public boolean writeObject(String key, Object object) {
+        if(object == null){
+            return false;
+        }
+        try {
+            return writeString(key, JSON.toJSONString(object));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean writeList(String key, List arrays) {
+        if(arrays == null){
+            return false;
+        }
+        try {
+            return writeString(key, JSON.toJSONString(arrays));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
     public String readString(String key, String defaultValue) {
         return mPreference.getString(key,defaultValue);
     }
@@ -129,6 +158,29 @@ class SharedPreferenceImpl<T extends ISharedPreferenceKeysEntity> implements ISh
     public Set<String> readStringSet(String key) {
         return mPreference.getStringSet(key,null);
     }
+
+    @Override
+    public <S> S readObject(String key, Class<S> clazz) {
+        String content = readString(key,"");
+        try {
+            return JSON.parseObject(content,clazz);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public <S> List<S> readList(String key, Class<S> clazz) {
+        String content = readString(key,"");
+        try {
+            return JSON.parseArray(content,clazz);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     @Override
     public boolean write(String fieldName, Object value) {
@@ -177,6 +229,18 @@ class SharedPreferenceImpl<T extends ISharedPreferenceKeysEntity> implements ISh
         if(SPReturnTypeEnum.StringSet.equals(returnType)){
             try {
                 return writeStringSet(fieldName, (Set<String>) value);
+            }catch (Exception e){}
+        }
+
+        if(SPReturnTypeEnum.Object.equals(returnType)){
+            try {
+                return writeObject(fieldName, value);
+            }catch (Exception e){}
+        }
+
+        if(SPReturnTypeEnum.List.equals(returnType)){
+            try {
+                return writeList(fieldName, (List) value);
             }catch (Exception e){}
         }
 
@@ -240,6 +304,14 @@ class SharedPreferenceImpl<T extends ISharedPreferenceKeysEntity> implements ISh
 
         if(SPReturnTypeEnum.StringSet.equals(returnType)){
             return readStringSet(fieldName);
+        }
+
+        if(SPReturnTypeEnum.Object.equals(returnType)){
+            return readObject(fieldName,anno.mapObject());
+        }
+
+        if(SPReturnTypeEnum.List.equals(returnType)){
+            return readList(fieldName,anno.mapObject());
         }
 
         return null;

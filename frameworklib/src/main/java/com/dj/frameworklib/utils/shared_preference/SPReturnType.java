@@ -15,4 +15,10 @@ public @interface SPReturnType {
     SPReturnTypeEnum returnType();
 
     String defaultValue() default "";
+
+    /**
+     * JSON转换成对象,只在returnType为Object和List时生效
+     * @return
+     */
+    Class mapObject() default Object.class;
 }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dj.simpleframework.R;
+import com.dj.simpleframework.test.pullToSwipe.PullToSwipeActivity;
 
 
 /**
@@ -29,6 +30,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.http_test:
                 startActivity(new Intent(this,RetrofitTestActivity.class));
+                break;
+            case R.id.pull_demo:
+                startActivity(new Intent(this,PullToSwipeActivity.class));
                 break;
         }
     }
