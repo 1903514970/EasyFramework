@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.dj.frameworklib.widget.refresh.DefaultRefreshHeaderView
+        android:id="@id/swipe_refresh_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+
+    <com.dj.frameworklib.widget.refresh.DefaultLoadMoreFooterView
+        android:id="@id/swipe_load_more_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+</merge>
